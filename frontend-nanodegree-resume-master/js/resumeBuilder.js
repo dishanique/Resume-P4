@@ -1,73 +1,200 @@
-<!DOCTYPE html>
+var bio =   {
+    "name": "Di'Shanique Al-Malik",
+    "role": "Front-End Developer",
+    "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Dry Humor"],
+    "contacts": {
+        "email": "dishanique.almalik@gmail.com",
+        "github": "dishanique",
+        "location": "Philadelphia, PA"
+    },
 
-<head>
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="icon" href="file:///Users/Di_Al-Malik1/Desktop/Me.jpg">
+    "bioPic": "images/Me.jpg",
+    "welcomeMsg": "Welcome to my resume page!",
 
-  <script src="js/jQuery.js"></script>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <script src="js/helper.js"></script>
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+};
 
-  <meta name="viewport" content="width=device-width">
-</head>
-<body unresolved>
-  <div id="main">
-    <div id="header" class="center-content">
-      <ul id="topContacts" class='flex-box'></ul>
-    </div>
-    <div style='clear: both;'></div>
-    <div id="workExperience" class='gray'>
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class='gray'>
-      <h2>Education</h2>
-    </div>
-    <div id="skills">
-      <h2>Skills</h2>
-      <div id="container" style="min-width: 310px; height: 400px; max-width: 1200px; margin: 0 auto"></div>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <div id="letsConnect" class='dark-gray'>
-      <h2 class='orange center-text'>Let's Connect</h2>
-      <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
-  </div>
 
-  <script src="js/resumeBuilder.js"></script>
+var work =  {
+    "jobs": [{
+        "employer": "Net-a-Porter",
+        "title": "Sales and Customer Care Consultant",
+        "location": "Mahwah, NJ",
+        "datesWorked": "April 2015 - June 2015",
+        "description": "Achieved sales performance of exceeding monthly goals while maintaining a book of clientele providing sales of luxury clothing, shoes, and accessories."
+    }, {
+        "employer": "Apple",
+        "title": "Specialist",
+        "location": "Ardmore, PA",
+        "datesWorked": "September 2014 - February 2015",
+        "description": "Achieved outstanding performance if becoming a Certified Apple Technician, trained and mentored employees within Apple retail store, performed technical troubleshooting abilities and repairs of Apple devices, and organized team building activities and events."
 
-  <script type="text/javascript">
-    if(document.getElementsByClassName("flex-item").length === 0) {
-      document.getElementById("topContacts").style.backgroundColor = "black";
-    }
-    if(document.getElementsByTagName("h1").length === 0) {
-      document.getElementById("header").style.backgroundColor = "black";
-    }
-    if(document.getElementsByClassName("work-entry").length === 0) {
-      document.getElementById("workExperience").style.backgroundColor = "black";
-    }
-    if(document.getElementsByClassName("project-entry").length === 0) {
-      document.getElementById("projects").style.backgroundColor = "black";
-    }
-    if(document.getElementsByClassName("education-entry").length === 0) {
-      document.getElementById("education").style.backgroundColor = "black";
-    }
-//    if(document.getElementsByClassName("skills-entry").length === 0) {
-//      document.getElementById("skillsChart").style.backgroundColor = "black";
-//    }
-    if(document.getElementsByClassName("flex-item").length === 0) {
-      document.getElementById("letsConnect").style.backgroundColor = "black";
-    }
-    if(document.getElementById("map") == undefined) {
-      document.getElementById("mapDiv").style.display = "none";
-    }
-  </script>
-</body>
+    }]
+};
 
+var education = {
+    "schools": [{
+        "name": "Temple University",
+        "datesAttended": "2011 - 2014",
+        "location": "Philadelphia, PA",
+        "degree": "Bachelors of Arts",
+        "major": "Strategic Communications",
+        "minor": "Public Relations",
+        "url": "http://www.temple.edu"
+    }],
+    "onlineCourses": [{
+        "school": "Udacity",
+        "title": "Front-End Developer Nanodegre",
+        "completed": "September 2016",
+        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    }]
+};
+
+var projects =  {
+    "projects": [{
+        "title": "Portfolio",
+        "datesWorked": "July 2016",
+        "description": "Built a responsive portfolio utilizing HTML, CSS, JavaScript, and JQuery. I even got a little fancy with using Bootstrap!",
+        "images": ["images/Life-Front-End-Developer-Feature_1290x688_KL.jpg"],
+        "url": "https://github.com/dishanique/Udacity_FEND_P3"
+    }, {
+        "title": "Animal Trading Card",
+        "datesWorked": "June 2016",
+        "description": "Converted a design prototype of an animal trading card into a functional webpage using HTML and CSS.",
+        "images": ["images/indian-peafowl-tail-spread-closeup.jpg"],
+        "url": "https://github.com/dishanique/Udacity_FEND_P2"
+    }, {
+        "title": "Blog Mockup",
+        "datesWorked": "June 2016",
+        "description": "uilt a Blog Mockup from PDF format using basic HMTL elements.",
+        "images": ["images/Blog%20Mockup.png"],
+        "url": "https://github.com/dishanique/Udacity_FEND_P1"
+    }]
+};
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
+var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+var formattedContactInfo = [];
+formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedWelcomeMsg);
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+
+    for (var i = 0; i < bio.skills.length; i++) {
+        $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+    }
+}
+
+for (i in formattedContactInfo) {
+    $("#topContacts").append(formattedContactInfo[i]);
+    $("#footerContacts").append(formattedContactInfo[i]);
+}
+
+
+work.display= function() {
+
+    if (work.jobs.length > 0) {
+
+        $("#workExperience").append(HTMLworkStart);
+
+        for (i in work.jobs) {
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+            var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+
+            var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
+
+            $(".work-entry:last").append(formattedEmployerWorkTitle);
+            $(".work-entry:last").append(formattedWorkLocation);
+            $(".work-entry:last").append(formattedDatesWorked);
+            $(".work-entry:last").append(formattedWorkDescription);
+            }
+        }
+
+    };
+
+}
+
+displayWork();
+
+
+projects.display = function() {
+    if (projects.projects.length > 0) {
+        for (i in projects.projects) {
+            $("#projects").append(HTMLprojectStart);
+
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
+            var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+
+            $(".project-entry:last").append(formattedProjectTitle);
+            $(".project-entry:last").append(formattedProjectDates);
+            $(".project-entry:last").append(formattedProjectDescription);
+
+            for (img in projects.projects[i].images) {
+                var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+                $(".project-entry:last").append(formattedProjectImage);
+            }
+
+
+        }
+    }
+}
+
+projects.display();
+
+education.display = function() {
+    if (education.schools.length > 0 || education.onlineCourses.length > 0) {
+        for (i in education.schools) {
+            $("#education").append(HTMLschoolStart);
+
+            var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].datesAttended);
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+            var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
+
+            $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
+            $(".education-entry:last").append(formattedSchoolDates);
+            $(".education-entry:last").append(formattedSchoolLocation);
+            $(".education-entry:last").append(formattedSchoolMajor);
+            $(".education-entry:last").append(formattedSchoolMinor);
+        }
+
+        if (education.onlineCourses.length > 0) {
+            $("#education").append(HTMLonlineClasses);
+            for (i in education.onlineCourses) {
+                $("#education").append(HTMLschoolStart);
+                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
+                var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+                var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].completed);
+                var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+
+                $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+                $(".education-entry:last").append(formattedOnlineDates);
+                $(".education-entry:last").append(formattedOnlineURL);
+            }
+        }
+
+    }
+}
+
+education.display();
+
+$("#mapDiv").append(googleMap);
+    
