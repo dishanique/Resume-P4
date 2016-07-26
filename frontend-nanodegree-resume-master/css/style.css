@@ -1,3 +1,6 @@
+
+
+
 body,
 div,
 ul,
@@ -90,6 +93,11 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .welcome-message {
@@ -219,3 +227,4 @@ span {
     display: block;
   }
 }
+
