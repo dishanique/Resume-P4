@@ -4,11 +4,11 @@ var bio =   {
     "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Dry Humor"],
     "contacts": {
         "email": "dishanique.almalik@gmail.com",
-        "github": "dishanique",
+        "github": "https://github.com/dishanique",
         "location": "Philadelphia, PA"
     },
 
-    "bioPic": "images/Me.jpg",
+    "bioPic": "file:///Users/Di_Al-Malik1/Desktop/frontend-nanodegree-resume-master/images/Me.jpg",
     "welcomeMsg": "Welcome to my resume page!",
 
 };
@@ -34,7 +34,7 @@ var work =  {
 var education = {
     "schools": [{
         "name": "Temple University",
-        "datesAttended": "2011 - 2014",
+        "datesAttended": "2010 - 2014",
         "location": "Philadelphia, PA",
         "degree": "Bachelors of Arts",
         "major": "Strategic Communications",
@@ -54,7 +54,7 @@ var projects =  {
         "title": "Portfolio",
         "datesWorked": "July 2016",
         "description": "Built a responsive portfolio utilizing HTML, CSS, JavaScript, and JQuery. I even got a little fancy with using Bootstrap!",
-        "images": ["images/Life-Front-End-Developer-Feature_1290x688_KL.jpg"],
+        "images": ["http://cdn.skilledup.com/wp-content/uploads/2014/10/Life-Front-End-Developer-Feature_1290x688_KL.jpg"],
         "url": "https://github.com/dishanique/Udacity_FEND_P3"
     }, {
         "title": "Animal Trading Card",
@@ -65,7 +65,7 @@ var projects =  {
     }, {
         "title": "Blog Mockup",
         "datesWorked": "June 2016",
-        "description": "uilt a Blog Mockup from PDF format using basic HMTL elements.",
+        "description": "Built a Blog Mockup from PDF format using basic HMTL elements.",
         "images": ["images/Blog%20Mockup.png"],
         "url": "https://github.com/dishanique/Udacity_FEND_P1"
     }]
@@ -75,19 +75,18 @@ var projects =  {
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
-var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 var formattedContactInfo = [];
 formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
 formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
-formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
 formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMsg);
+$("#header").append(formattedwelcomeMsg);
 
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
@@ -124,13 +123,9 @@ work.display= function() {
             $(".work-entry:last").append(formattedWorkDescription);
             }
         }
-
     };
 
-}
-
-displayWork();
-
+work.display();
 
 projects.display = function() {
     if (projects.projects.length > 0) {
