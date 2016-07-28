@@ -1,4 +1,4 @@
-var bio =   {
+var bio = {
     "name": "Di'Shanique Al-Malik",
     "role": "Front-End Developer",
     "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Dry Humor"],
@@ -14,7 +14,7 @@ var bio =   {
 };
 
 
-var work =  {
+var work = {
     "jobs": [{
         "employer": "Net-a-Porter",
         "title": "Sales and Customer Care Consultant",
@@ -25,7 +25,7 @@ var work =  {
         "employer": "Apple",
         "title": "Specialist",
         "location": "Ardmore, PA",
-        "datesWorked": "September 2014 - February 2015",
+        "datesworked": "September 2014 - February 2015",
         "description": "Achieved outstanding performance if becoming a Certified Apple Technician, trained and mentored employees within Apple retail store, performed technical troubleshooting abilities and repairs of Apple devices, and organized team building activities and events."
 
     }]
@@ -49,7 +49,7 @@ var education = {
     }]
 };
 
-var projects =  {
+var projects = {
     "projects": [{
         "title": "Portfolio",
         "datesWorked": "July 2016",
@@ -96,13 +96,16 @@ if (bio.skills.length > 0) {
     }
 }
 
-for (i in formattedContactInfo) {
-    $("#topContacts").append(formattedContactInfo[i]);
-    $("#footerContacts").append(formattedContactInfo[i]);
-}
+// for (i in formattedContactInfo) {
+//     $("#topContacts").append(formattedContactInfo[i]);
+//     $("#footerContacts").append(formattedContactInfo[i]);
+// }
+formattedContactInfo.forEach(function (element) {
+    $("#topContacts").append(element);
+    $("#footerContacts").append(element);
+});
 
-
-work.display= function() {
+work.display = function () {
 
     if (work.jobs.length > 0) {
 
@@ -121,16 +124,20 @@ work.display= function() {
             $(".work-entry:last").append(formattedWorkLocation);
             $(".work-entry:last").append(formattedDatesWorked);
             $(".work-entry:last").append(formattedWorkDescription);
-            }
         }
-    };
+    }
+};
 
 work.display();
 
-projects.display = function() {
+projects.display = function () {
     if (projects.projects.length > 0) {
         for (i in projects.projects) {
             $("#projects").append(HTMLprojectStart);
+            //     formattedprojects.forEach(function(element) {
+            //     $("#topprojects").append(element);
+            //     $("#footerprojectss").append(element);
+            // });
 
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
@@ -152,7 +159,7 @@ projects.display = function() {
 
 projects.display();
 
-education.display = function() {
+education.display = function () {
     if (education.schools.length > 0 || education.onlineCourses.length > 0) {
         for (i in education.schools) {
             $("#education").append(HTMLschoolStart);
@@ -192,4 +199,3 @@ education.display = function() {
 education.display();
 
 $("#mapDiv").append(googleMap);
-    
