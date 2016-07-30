@@ -1,194 +1,182 @@
 var bio = {
-    "name": "Di'Shanique Al-Malik",
-    "role": "Front-End Developer",
-    "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Dry Humor"],
-    "contacts": {
+     "name": "Di'Shanique Al-Malik",
+     "role": "Front-End Web Developer",
+     "contacts": {
+        "mobile": "267-257-0939",
         "email": "dishanique.almalik@gmail.com",
-        "github": "https://github.com/dishanique",
+        "github": "https://github.com/dishaniqu",
         "location": "Philadelphia, PA"
-    },
+     },
+     "biopic": "file:///Users/Di_Al-Malik1/Desktop/frontend-nanodegree-resume-master/images/Me.jpg",
+     "welcomeMessage": "Welcome to my Online Resume!",
+     "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Python", "Bootstrap", "Java", "Dry Humor"]
+ };
 
-    "bioPic": "file:///Users/Di_Al-Malik1/Desktop/frontend-nanodegree-resume-master/images/Me.jpg",
-    "welcomeMsg": "Welcome to my resume page!",
-
-};
-
-
-var work = {
-    "jobs": [{
-        "employer": "Net-a-Porter",
-        "title": "Sales and Customer Care Consultant",
-        "location": "Mahwah, NJ",
-        "datesWorked": "April 2015 - June 2015",
-        "description": "Achieved sales performance of exceeding monthly goals while maintaining a book of clientele providing sales of luxury clothing, shoes, and accessories."
-    }, {
-        "employer": "Apple",
-        "title": "Specialist",
-        "location": "Ardmore, PA",
-        "datesworked": "September 2014 - February 2015",
-        "description": "Achieved outstanding performance if becoming a Certified Apple Technician, trained and mentored employees within Apple retail store, performed technical troubleshooting abilities and repairs of Apple devices, and organized team building activities and events."
-
-    }]
-};
-
-var education = {
-    "schools": [{
+ var education = {
+     "schools": [{
         "name": "Temple University",
-        "datesAttended": "2010 - 2014",
         "location": "Philadelphia, PA",
         "degree": "Bachelors of Arts",
-        "major": "Strategic Communications",
-        "minor": "Public Relations",
+        "majors": ["Strategic Communication"],
+        "dates": "2010 - 2014",
         "url": "http://www.temple.edu"
-    }],
-    "onlineCourses": [{
-        "school": "Udacity",
-        "title": "Front-End Developer Nanodegre",
-        "completed": "September 2016",
-        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    }]
-};
+     }
+    ],
+     "onlineCourses": [{
+         "title": "Front-End Web Developer Nanodegree",
+         "school": "Udacity",
+         "dates": "2016",
+         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+     }]
+ };
 
-var projects = {
-    "projects": [{
+ var work = {
+     "jobs": [{
+    "employer": "Net-a-Porter",
+     "title": "Sales and Customer Care Consultan",
+     "location": "Mahwah, NJ",
+     "dates": "April 2015 - June 2015",
+
+     "description": "Achieved sales performance of exceeding monthly goals while maintaining a book of clientele providing sales of luxury clothing, shoes, and accessories."
+    },
+    {
+     "title": "Specialist",
+     "employer": "Apple",
+     "dates": "September 2014 - February 2015",
+     "location": "Ardmore, PA",
+     "description": "Achieved outstanding performance if becoming a Certified Apple Technician, trained and mentored employees within Apple retail store, performed technical troubleshooting abilities and repairs of Apple devices, and organized team building activities and event."
+     }]
+ };
+
+ var projects = {
+     "projects": [
+     {
         "title": "Portfolio",
-        "datesWorked": "July 2016",
+        "dates": "2016",
         "description": "Built a responsive portfolio utilizing HTML, CSS, JavaScript, and JQuery. I even got a little fancy with using Bootstrap!",
-        "images": ["http://cdn.skilledup.com/wp-content/uploads/2014/10/Life-Front-End-Developer-Feature_1290x688_KL.jpg"],
-        "url": "https://github.com/dishanique/Udacity_FEND_P3"
-    }, {
+        "images": ["http://cdn.skilledup.com/wp-content/uploads/2014/10/Life-Front-End-Developer-Feature_1290x688_KL.jpg"]
+     },
+     {
         "title": "Animal Trading Card",
-        "datesWorked": "June 2016",
+        "dates": "2016",
         "description": "Converted a design prototype of an animal trading card into a functional webpage using HTML and CSS.",
-        "images": ["images/indian-peafowl-tail-spread-closeup.jpg"],
-        "url": "https://github.com/dishanique/Udacity_FEND_P2"
-    }, {
+        "images": ["images/indian-peafowl-tail-spread-closeup.jpg"]
+     },
+     {
         "title": "Blog Mockup",
-        "datesWorked": "June 2016",
+        "dates": "2016",
         "description": "Built a Blog Mockup from PDF format using basic HMTL elements.",
-        "images": ["images/Blog%20Mockup.png"],
-        "url": "https://github.com/dishanique/Udacity_FEND_P1"
-    }]
-};
+        "images": ["images/Blog%20Mockup.png"]
+     }
+    ]
+ };
 
+ bio.display = function() {
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedJob = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedNameRole = (formattedName + formattedJob);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
-var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  /* top and footer contacts */
 
-var formattedContactInfo = [];
-formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
-formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
-formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+    var formattedContactInfo = [];
+    formattedContactInfo.push(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+    formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+    formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
+    $("#header").prepend(formattedNameRole);
+    $("#header").append(formattedPic);
+    $("#header").append(formattedWelcome);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedwelcomeMsg);
+  /* for loop */
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-
-    for (var i = 0; i < bio.skills.length; i++) {
-        $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+    if(bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+        for (var i=0; i<8; i++) {
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#skills").append(formattedSkill);
+        }
     }
-}
 
-// for (i in formattedContactInfo) {
-//     $("#topContacts").append(formattedContactInfo[i]);
-//     $("#footerContacts").append(formattedContactInfo[i]);
-// }
-formattedContactInfo.forEach(function (element) {
-    $("#topContacts").append(element);
-    $("#footerContacts").append(element);
-});
+    for (var info=0; info<4; info++) {
+        $("#topContacts").append(formattedContactInfo[info]);
+        $("#footerContacts").append(formattedContactInfo[info]);
+    }
+ }
 
-work.display = function () {
+ bio.display();
 
-    for (var job in work.jobs) {
-
+ work.display = function() {
+    work.jobs.forEach(function(job) {
         $("#workExperience").append(HTMLworkStart);
 
-        for (i in work.jobs) {
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-            var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-            var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
-            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-
-            var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
-
-            $(".work-entry:last").append(formattedEmployerWorkTitle);
-            $(".work-entry:last").append(formattedWorkLocation);
-            $(".work-entry:last").append(formattedDatesWorked);
-            $(".work-entry:last").append(formattedWorkDescription);
-        }
-    }
-};
-
-work.display();
-
-projects.display = function () {
-    if (projects.projects.length > 0) {
-        $("#projects").append(HTMLprojectStart);
-    }
-    projects.projects.forEach(function(elem) {
-        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", elem.title).replace("#", elem.url);
-        var formattedProjectDates = HTMLprojectDates.replace("%data%", elem.datesWorked);
-        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", elem.description);
-
-        $(".project-entry:last").append(formattedProjectTitle);
-        $(".project-entry:last").append(formattedProjectDates);
-        $(".project-entry:last").append(formattedProjectDescription);
-
-        elem.images.forEach(function(image){
-            var formattedProjectImage = HTMLprojectImage.replace("%data%", image);
-            $(".project-entry:last").append(formattedProjectImage);
-        });
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", /*work.jobs[job]*/job.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", /*work.jobs[job]*/job.title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerTitle);
+        var formattedYears = HTMLworkDates.replace("%data%", /*work.jobs[job]*/job.dates);
+        $(".work-entry:last").append(formattedYears);
+        var formattedCity = HTMLworkLocation.replace("%data%", /*work.jobs[job]*/job.location);
+        $(".work-entry:last").append(formattedCity);
+        var formattedDescription = HTMLworkDescription.replace("%data%", /*work.jobs[job]*/job.description);
+        $(".work-entry:last").append(formattedDescription);
     });
-}
+ }
 
-projects.display();
+ work.display();
 
-education.display = function () {
-    if (education.schools.length > 0 || education.onlineCourses.length > 0) {
-        for (i in education.schools) {
-            $("#education").append(HTMLschoolStart);
+ education.display = function() {
+    education.schools.forEach(function(school) {
+        $("#education").append(HTMLschoolStart);
 
-            var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].datesAttended);
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
-            var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
+        var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+        var formattedNameDegree = formattedSchoolName + formattedDegree;
+        $(".education-entry:last").append(formattedNameDegree);
+        var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.dates);
+        $(".education-entry:last").append(formattedSchoolDate);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
+        $(".education-entry:last").append(formattedMajor);
+        var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+        $(".education-entry:last").append(formattedLocation);
+        var formattedURL = HTMLonlineURL.replace("%data%", school.url);
+        $(".education-entry:last").append(formattedURL);
+    });
 
-            $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
-            $(".education-entry:last").append(formattedSchoolDates);
-            $(".education-entry:last").append(formattedSchoolLocation);
-            $(".education-entry:last").append(formattedSchoolMajor);
-            $(".education-entry:last").append(formattedSchoolMinor);
-        }
+    $("#education").append(HTMLonlineClasses);
 
-        if (education.onlineCourses.length > 0) {
-            $("#education").append(HTMLonlineClasses);
-            for (i in education.onlineCourses) {
-                $("#education").append(HTMLschoolStart);
-                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
-                var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-                var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].completed);
-                var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+    education.onlineCourses.forEach(function(internet) {
+        $("#education").append(HTMLschoolStart);
+        var formattedTitle = HTMLonlineTitle.replace("%data%", internet.title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%", internet.school);
+        var formattedTitleSchool = formattedTitle + formattedSchool;
+        $(".education-entry:last").append(formattedTitleSchool);
+        var formattedDate = HTMLonlineDates.replace("%data%", internet.dates);
+        $(".education-entry:last").append(formattedDate);
+        var formattedURL = HTMLonlineURL.replace("%data%", internet.url);
+        $(".education-entry:last").append(formattedURL);
+    });
+ }
 
-                $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
-                $(".education-entry:last").append(formattedOnlineDates);
-                $(".education-entry:last").append(formattedOnlineURL);
-            }
-        }
+ education.display();
 
-    }
-}
+ projects.display = function() {
+    projects.projects.forEach(function(p) {
+        $("#projects").append(HTMLprojectStart);
 
-education.display();
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", p.title);
+        $(".project-entry:last").append(formattedProjectTitle);
+        var formattedProjectDate = HTMLprojectDates.replace("%data%", p.dates);
+        $(".project-entry:last").append(formattedProjectDate);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", p.description);
+        $(".project-entry:last").append(formattedProjectDescription);
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", p.images);
+        $(".project-entry:last").append(formattedProjectImage);
+    });
+ }
 
-$("#mapDiv").append(googleMap);
+ projects.display();
+
+ $("#mapDiv").append(googleMap);
