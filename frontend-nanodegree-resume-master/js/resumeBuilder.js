@@ -2,9 +2,9 @@ var bio = {
     "name": "Di'Shanique Al-Malik",
     "role": "Front-End Web Developer",
     "contacts": {
-        "mobile": "267-257-0939",
+        "mobile": "267-000-000",
         "email": "dishanique.almalik@gmail.com",
-        "github": "https://github.com/dishaniqu",
+        "github": "https://github.com/dishanique",
         "location": "Philadelphia, PA"
     },
     "biopic": "file:///Users/Di_Al-Malik1/Desktop/frontend-nanodegree-resume-master/images/Me.jpg",
